@@ -1,0 +1,8 @@
+Dockfile:
+FROM tomcat
+MAINTAINER www.yxxd1993.cn
+WORKDIR /usr/local/tomcat/conf
+COPY server.xml server.xml
+#RUN sed -i 's|"8080"|"8089"|' server.xml
+EXPOSE 8080
+ENTRYPOINT ["/usr/local/tomcat/bin/catalina.sh", "run"]
